@@ -33,3 +33,7 @@ display(data.head())
 #change data type of subject id to do math on
 data['subject id'] = data['subject id'].astype('float32') + 10e8
 display(data.head())
+
+#the first two numbers of the id are the childen's ages
+data['year'] = data['subject id']//1e8
+display(data.head())
