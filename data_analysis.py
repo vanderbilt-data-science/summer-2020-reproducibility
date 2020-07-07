@@ -37,3 +37,10 @@ display(data.head())
 #the first two numbers of the id are the childen's ages
 data['year'] = data['subject id']//1e8
 display(data.head())
+
+#convert the subject ids to strings to ensure number integrity
+data['subject id'] = data['subject id'].apply(lambda x: '{0:2.6e}'.format(x))
+display(data.head())
+
+#save file
+data.to_csv('data_file.csv', sep='\t', index=False)
