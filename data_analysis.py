@@ -29,3 +29,7 @@ def set_district(row):
 #even IDs are from a particular district
 data['district'] = data['subject id'].apply(set_district)
 display(data.head())
+
+#change data type of subject id to do math on
+data['subject id'] = data['subject id'].astype('float32') + 10e8
+display(data.head())
