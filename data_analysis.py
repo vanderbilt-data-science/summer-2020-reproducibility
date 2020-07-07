@@ -18,3 +18,14 @@ display(data.head())
 print('\nwith new test column')
 data['test1'] = np.random.random(size=(10,1))*100
 display(data.head())
+
+#add set district function
+def set_district(row):
+    if row % 2 == 0:
+        return 'davidson'
+    else:
+        return 'williamson'
+
+#even IDs are from a particular district
+data['district'] = data['subject id'].apply(set_district)
+display(data.head())
