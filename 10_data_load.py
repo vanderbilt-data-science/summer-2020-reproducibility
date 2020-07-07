@@ -1,7 +1,7 @@
 #################
-## data_analysis.py
+## 10_data_load.py
 ##
-## Purpose: in this file, I analyze the subject files in data_file.csv
+## Purpose: in this file, I load and modify the subject files in data_file.csv
 #################
 
 #imports
