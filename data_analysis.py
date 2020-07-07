@@ -13,3 +13,8 @@ from IPython.display import display
 data = pd.read_csv('data_file.csv', delimiter='\t')
 print('initial data: ')
 display(data.head())
+
+#add some random numbers as a column
+print('\nwith new test column')
+data['test1'] = np.random.random(size=(10,1))*100
+display(data.head())
