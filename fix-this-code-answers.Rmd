@@ -1,0 +1,77 @@
+---
+title: "reproducible-ds-fix-this"
+output: html_document
+---
+
+##Exercise 1
+
+The code below has numerous issues that need to be corrected, based on what we've discussed in the workshop, please correct them. Note, you don't need to fully understand the code below, 
+
+This function will take numeric input as individual values or vectors, sum across all values, and return the single sum.
+```{r custom add function}
+add_vals <- function(...){
+  # ...: individual numeric values or vectors separated by commas
+  # return: numeric sum of all values
+  
+  # calculate sum
+  total_val <- sum(...)
+  
+  # return total sum
+  return(total_val)
+}
+
+# Examples
+# add_vals(1,3,4)
+# add_vals(c(1,2,3), c(4,5,6))
+```
+
+
+This function calls add_vals then takes the square root of the sum total. Make sure to load run the `add_vals` first
+```{r custom sqrt function}
+sum_sqrt <- function(...){
+  # ...: individual numeric values or vectors separated by commas
+  # return: numeric square root of sum values
+  
+  # sum all values
+  total_sum <- add_vals(...)
+  
+  # take square root
+  sum_sqrt <- sqrt(total_sum)
+  
+  # return square root of sum
+  return(sum_sqrt)
+}
+
+# Examples
+# sum_sqrt(c(1,2,3), c(4,5,6))
+# sum_sqrt(1,2,3)
+```
+
+This function take the sum_sqrt function and adds the option to use a list as input. 
+```{r add ability to take lists}
+sum_sqrt_list <- function(..., input_list = TRUE){
+  # ... : individual numeric values, vectors, or single list of numeric values and/or vectors
+  # input_list: logical indicating whether the input is a list or not
+  # return: numeric square root of sum values
+  
+  # if input is a list
+  if(input_list){
+    
+    # apply add_vals() individually to each list item, then send that vector to sum_sqrt
+    sum_sqrt_val <- map_dbl(.x = ..., .f = add_vals) %>% 
+      sum_sqrt()
+  }
+  
+  # if input is not a list
+  else
+    sum_sqrt_val <- sum_sqrt(...)
+  
+  # return square root of total sum
+  return(sum_sqrt_val)
+}
+
+# Examples
+# sum_sqrt_list(c(1,2,3), c(4,5,6), input_list = FALSE)
+# vector_list <- list(c(1,2,3), c(4,5,6))
+# sum_sqrt_list(vector_list, input_list = TRUE)
+```

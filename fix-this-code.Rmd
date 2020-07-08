@@ -1,0 +1,45 @@
+---
+title: "fix-this-code"
+output: html_document
+---
+
+
+
+The code below has numerous issues that need to be corrected, based on what we've discussed in the workshop, please correct them. Note, you don't need to fully understand the code below, 
+
+This function will take numeric input as individual values or vectors, sum across all values, and return the single sum.
+
+
+```{r}
+my_fun <- function(...){
+  sum(...)
+}
+my_fun(1,2,3)
+```
+
+
+##Exercises
+
+bad version - sum_sqrt
+```{r}
+my_fun2 <- function(...){
+  x <- add_vals(...)
+  y <- sqrt(x)
+  y
+}
+```
+
+bad version - sum_sqrt_list
+```{r}
+my_fun3 <- function(..., y = TRUE){
+  if(y){
+    map_dbl(.x = ..., .f = add_vals) %>% 
+      sum_sqrt()
+  }
+  else
+   sum_sqrt(...)
+}
+my_list <- list(c(1,2,3), c(4,5,6))
+my_fun3(my_list)
+```
+
