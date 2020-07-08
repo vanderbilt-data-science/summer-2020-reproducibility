@@ -17,10 +17,8 @@ my_fun <- function(...){
 my_fun(1,2,3)
 ```
 
+## Breakout Exercise
 
-##Exercises
-
-bad version - sum_sqrt
 ```{r}
 my_fun2 <- function(...){
   x <- add_vals(...)
@@ -29,7 +27,7 @@ my_fun2 <- function(...){
 }
 ```
 
-bad version - sum_sqrt_list
+
 ```{r}
 my_fun3 <- function(..., y = TRUE){
   if(y){
