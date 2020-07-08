@@ -4,12 +4,6 @@ output: html_document
 ---
 
 
-
-The code below has numerous issues that need to be corrected, based on what we've discussed in the workshop, please correct them. Note, you don't need to fully understand the code below, 
-
-This function will take numeric input as individual values or vectors, sum across all values, and return the single sum.
-
-
 ```{r}
 my_fun <- function(...){
   sum(...)
